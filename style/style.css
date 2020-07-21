@@ -8,6 +8,7 @@ body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     transition: all 0.3s;
+    color: #2c405e;
 }
 
 body.light {
@@ -82,7 +83,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #2c405e;
+    /* color: #2c405e; */
+    color: inherit;
     position: relative;
 }
 
