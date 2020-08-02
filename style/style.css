@@ -4,6 +4,10 @@
     font-family: "Poppins", sans-serif;
 }
 
+fohtml {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
@@ -12,7 +16,7 @@ body {
 }
 
 body.light {
-    background-color: #f5f5f5;
+    background-color: #ffff;
     color: #2c405e;
 }
 
@@ -38,6 +42,8 @@ button {
 button:focus {
     outline-style: none;
 }
+
+
 
 nav {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
@@ -131,7 +137,7 @@ nav ul li a:hover::after {
     width: 15%;
     height: 10%;
     border-radius: 50%;
-    border: 4px solid #2c405e;
+    border: 4px solid;
 }
 .profile .bio-text {
     width: 80%;
@@ -142,17 +148,42 @@ nav ul li a:hover::after {
     align-items: flex-start;
     justify-content: space-between;
 }
+.profile .bio-text .social-media {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.profile .bio-text .social-media i {
+    margin: 0 10px 10px 10px;
+}
+.profile .bio-text .social-media i a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.featured {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .profile .bio-text > h2,
 .tech-stack > h2,
 .projects > h2,
-.communities > h2 {
+.communities > h2,
+.experience > h2,
+.education > h2 {
     margin-bottom: 0;
     margin-top: 0;
 }
 .profile .bio-text > span,
 .tech-stack > span,
 .projects > span,
-.communities > span {
+.communities > span,
+.experience > span,
+.education > span {
     padding: 0;
     margin: 0;
     width: 70px;
@@ -163,11 +194,87 @@ nav ul li a:hover::after {
 }
 
 .tech-stack,
-.communities {
+.communities,
+.experience,
+.education {
     padding: 20px;
     margin-top: 30px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+}
+.communities .communities-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.communities .communities-details .details {
+    width: 490px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.communities .communities-details .details .logos {
+    width: 70%;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.communities .communities-details .details .role {
+    margin-top: 3px;
+    font-weight: bolder;
+    font-size: 1.1em;
+}
+.communities .communities-details .details .socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.communities .communities-details .details .socials i {
+    margin: 5px;
+}
+.communities .communities-details .details .socials i a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.education .edu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.education .edu .course {
+    font-weight: bold;
+}
+.education .edu .date {
+    font-style: italic;
+}
+.education .edu .course i,
+.education .edu .school i,
+.education .edu .date i {
+    margin-right: 5px;
+}
+
+.experience .exp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.experience .exp .role {
+    font-weight: bold;
+}
+.experience .exp .date {
+    font-style: italic;
+}
+.experience .exp .role i,
+.experience .exp .company i,
+.experience .exp .date i {
+    margin-right: 5px;
 }
 
 .projects {
@@ -224,7 +331,7 @@ nav ul li a:hover::after {
     height: 207px;
     width: 100%;
     padding: 10px;
-    background: url("../assets/img/iproperty.png");
+    background: url("../assets/img/portfolio.png");
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -248,6 +355,17 @@ nav ul li a:hover::after {
     width: 100%;
     padding: 10px;
     background: url("../assets/img/webshot.png");
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    cursor: pointer;
+    border-radius: 5px 5px 0 0;
+}
+.projects .project-section .content .sixth {
+    height: 207px;
+    width: 100%;
+    padding: 10px;
+    background: url("../assets/img/pwa.png");
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
@@ -299,7 +417,30 @@ nav ul li a:hover::after {
     width: 100px;
     height: 100px;
     margin: 10px;
-    /* filter: grayscale(1); */
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+
+footer > span {
+    opacity: 0.5;
+}
+
+footer > span > a {
+    text-decoration: none;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 /* responsiveness */
@@ -318,6 +459,12 @@ nav ul li a:hover::after {
         text-align: center;
         transform: translateX(120%);
         transition: transform 0.4s ease;
+        border-radius: 5px;
+    }
+
+    nav ul li a {
+        /* text-decoration: none; */
+        color: #2c405e;
     }
 
     nav ul.show {
@@ -326,5 +473,62 @@ nav ul li a:hover::after {
 
     nav ul li {
         margin: 15px;
+    }
+
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile > img {
+        width: 85%;
+        height: 80%;
+        margin-bottom: 10px;
+        
+    }
+
+    .featured {
+        padding: 10px;
+    }
+
+
+    .communities .communities-details {
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+    }
+    .communities .communities-details .details {
+        width: 100%;
+        margin: 10px 0 10px 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .communities .communities-details .details .logos {
+        width: 100%;
+    }
+    .communities .communities-details .details .role, .communities .communities-details .details .description {
+        text-align: center;
+    }
+
+    .projects .project-section .content {
+        margin: 0;
+    }
+
+    .projects .project-section {
+        flex-direction: column;
+    }
+
+    .projects .project-section .content {
+        width: 100%;
+    }
+    .education .edu {
+        align-items: center;
+        justify-self: center;
+        text-align: center;
+    }
+
+    .experience .exp {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
 }

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wayne Gakuo - Portfolio</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://use.fontawesome.com/a71e5ce1d6.js"></script>
 </head>
 
 <body>
@@ -17,32 +18,58 @@
         </button>
 
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a id="home-anchor" href="#">Home</a></li>
+            <li><a id="stack-anchor" href="#tech-stack">Tech Stack</a></li>
+            <li><a id="comm-anchor" href="#communities">Communities</a></li>
+            <li><a id="edu-anchor" href="#education">Education</a></li>
+            <li><a id="exp-anchor" href="#experience">Experience</a></li>
+            <li><a id="proj-anchor" href="#projects">Projects</a></li>
         </ul>
     </nav>
 
     <div class="toggle-bar">
-        <button onClick="toggleTheme('light')">Light mode</button>
 
-        <button onClick="toggleTheme('dark')">Dark Mode</button>
+        <button class="mode" onClick="toggleTheme('light')"><i class="fa fa-sun-o" aria-hidden="true"></i></button>
+
+        <button class="mode" onClick="toggleTheme('dark')"><i class="fa fa-moon-o" aria-hidden="true"></i></button>
     </div>
 
     <div class="profile">
         <img src="assets/img/portrait.jpg" alt="">
         <div class="bio-text">
             <h2>About Me</h2><span></span>
-            <p> I am a Software Engineer at MySpace Properties, Kenya and the Male Ally for AnitaB.Org Nairobi
-                Community. I'm passionate about developer communities with keen interest in empowering
+            <p>Software Engineer | Co-Organizer @ GDG Nairobi | Co-Lead Angular
+                Kenya | Co-Lead @ AnitaB.org Nairobi | Developer Communities Builder 🥑</p>
+            <p> I'm passionate about developer communities with keen interest in empowering
                 others to build tech solutions that solve real-world problems. I'm also a Design Thinking facilitator
                 who believes that the merger between Design Thinking and technology will lead to the building of
-                user-centred solutions that are sustainable and have a long-term impact</p>
+                user-centred solutions that are sustainable and have a long-term impact.</p>
+
+            <div class="social-media">
+                <i class="fa fa-twitter" aria-hidden="true"><a href="https://twitter.com/wayne_gakuo" target="_blank"
+                        rel="noopener">Twitter</a></i>
+                <i class="fa fa-linkedin" aria-hidden="true"><a href="https://www.linkedin.com/in/waynegakuo/"
+                        target="_blank" rel="noopener">LinkedIn</a></i>
+                <i class="fa fa-github" aria-hidden="true"><a href="https://github.com/waynegakuo" target="_blank"
+                        rel="noopener">GitHub</a></i>
+                <i class="fa fa-facebook-official" aria-hidden="true"><a href="https://twitter.com/wayne_gakuo"
+                        target="_blank" rel="noopener">Facebook</a></i>
+                <i class="fa fa-download" aria-hidden="true"><a
+                        href="https://waynegakuo.netlify.app/assets/resume/Wayne_Gakuo_CV.pdf" target="_blank"
+                        rel="noopener">Résumé</a></i>
+                <i class="fa fa-envelope" aria-hidden="true"><a href="mailto:waynejotham@gmail.com" target="_blank"
+                        rel="noopener">Email Me</a></i>
+            </div>
         </div>
     </div>
 
-    <div class="tech-stack">
+    <div class="featured">
+        <iframe style="border-radius: 5px;" width="560" height="315" src="https://www.youtube.com/embed/TVOozawQsj4"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+
+    <div class="tech-stack" id="tech-stack">
         <h2>Tech Stack</h2><span></span>
 
         <div class="stack-imgs">
@@ -59,11 +86,133 @@
         </div>
     </div>
 
-    <div class="communities">
+    <div class="communities" id="communities">
         <h2>Communities</h2><span></span>
+
+        <div class="communities-details">
+            <div class="details angular-kenya">
+                <img class="logos" src="assets/img/angular-ke-logo.png" alt="Angular Kenya Logo">
+                <span class="role">Co-Lead, Angular Kenya</span>
+                <p class="description">Angular Kenya Community: we 'ng serve' the Kenyan tech community to become
+                    profecient Angular
+                    developers. We are a community of developers who are passionate about sharing the knowledge of the
+                    Angular Framework with budding Kenyan developers.</p>
+                <div class="socials">
+                    <i class="fa fa-twitter" aria-hidden="true"><a href="https://twitter.com/angular_kenya"
+                            target="_blank" rel="noopener">Twitter</a></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"><a
+                            href="https://www.linkedin.com/company/angular-kenya/" target="_blank"
+                            rel="noopener">LinkedIn</a></i>
+
+                </div>
+            </div>
+            <div class="details abnrbi">
+                <img class="logos" src="assets/img/anitab_nrbi.png" alt="AnitaB.org Nairobi Logo">
+                <span class="role">Co-Lead & Male Ally, AnitaB.org Nairobi</span>
+                <p class="description">We envision and work towards creating a future where people who imagine and build
+                    technology mirror
+                    the societies for which they build for. We offer a platform to connect, inspire and guide women in
+                    computing , and organizations that have technology innovation as a strategic imperative.</p>
+                <div class="socials">
+                    <i class="fa fa-twitter" aria-hidden="true"><a href="https://twitter.com/AnitaB_org" target="_blank"
+                            rel="noopener">Twitter</a></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"><a href="https://www.linkedin.com/company/anitab-org/"
+                            target="_blank" rel="noopener">LinkedIn</a></i>
+                </div>
+
+            </div>
+
+            <div class="details gdgnrbi">
+                <img class="logos" src="assets/img/gdg_nairobi.png" alt="GDG Nairobi Logo">
+                <span class="role">Co-Organizer, GDG Nairobi</span>
+                <p class="description">Organize and create events in Nairobi, Kenya with the aim of spreading knowledge
+                    about technology and
+                    sharing experiences in building user-centered solutions using Google technologies.</p>
+                <div class="socials">
+                    <i class="fa fa-twitter" aria-hidden="true"><a href="https://twitter.com/GDG_Nairobi"
+                            target="_blank" rel="noopener">Twitter</a></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"><a href="https://www.linkedin.com/company/gdg-nairobi/"
+                            target="_blank" rel="noopener">LinkedIn</a></i>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <div class="projects">
+    <div class="education" id="education">
+        <h2>Education</h2><span></span>
+        <div class="edu">
+            <span class="course"><i class="fa fa-book" aria-hidden="true"></i>
+                BSc. Computer Science</span>
+            <span class="school"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                Ashesi University, Ghana</span>
+            <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                Aug 2015 - June 2019</span>
+            <p class="description">I received a 4-year scholarship from the MasterCard Foundation to study Computer
+                Science at Ashesi University, Ghana. Through my four years at Ashesi University, apart from academics, I
+                was involved in various activities including give-back community programs and problem-soliving communities
+                and/or organization that sought to solve real-world problems with user-centered solutions.</p>
+        </div>
+
+        <div class="edu">
+            <span class="course"><i class="fa fa-book" aria-hidden="true"></i>
+                Kenya Certificate of Secondary Education, K.C.S.E.</span>
+            <span class="school"><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                The Aga Khan High School, Mombasa</span>
+            <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                Jan 2010 - Nov 2013</span>
+            <p class="description">Through my four years in high school, I was a beneficiary of a USAID Scholarship
+                under Equity Bank's Wings to Fly Program which sought to sponsor students who came from disadvantaged
+                backgrounds but academically gifted.</p>
+        </div>
+    </div>
+
+    <div class="experience" id="experience">
+        <h2>Experience</h2><span></span>
+
+        <div class="exp">
+            <span class="role"><i class="fa fa-laptop" aria-hidden="true"></i>
+                Software Engineer & Technical Lead</span>
+            <span class="company"><i class="fa fa-building-o" aria-hidden="true"></i>
+                MySpace Properties, Kenya</span>
+            <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                Feb 2020 - Present</span>
+            <p class="description">Building a real-estate platform used by property owners, agents, and buyers to buy
+                and sell real estate property in Kenya. The platform is meant to slash the current time it takes to buy
+                a property from 90 days to 60 days. <br>
+                Designed and built an in-house application utilizing Angular, TypeScript, HTML and CSS for tracking
+                customers’ enquiries on real-estate property to either buy or sell.</p>
+        </div>
+
+        <div class="exp">
+            <span class="role"><i class="fa fa-laptop" aria-hidden="true"></i>
+                Remote Software Developer</span>
+            <span class="company"><i class="fa fa-building-o" aria-hidden="true"></i>
+                Knackapp</span>
+            <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                Oct 2019 - January 2020</span>
+            <p class="description">Revamped the KnackApp business platform to improve the user experience and onboarding
+                experience of new users of the platform using Angular, HTML, TypeScript, and SASS as the underlying
+                technologies. <br> Knack uses a combination of brain science, game theory, computer and data science,
+                digital user experience and machine learning, to help individuals know their hidden natural talents.
+                KnackApp is used in over 100 countries and available in over 20 languages.</p>
+        </div>
+
+        <div class="exp">
+            <span class="role"><i class="fa fa-laptop" aria-hidden="true"></i>
+                I.T. Department Intern</span>
+            <span class="company"><i class="fa fa-building-o" aria-hidden="true"></i>
+                Ashesi University, Ghana</span>
+            <span class="date"><i class="fa fa-clock-o" aria-hidden="true"></i>
+                Aug 2016 - May 2018</span>
+            <p class="description"> Conducted training sessions on usage of basic Microsoft Office applications where
+                70% of students have been able to apply these skills in their schoolwork. <br> Solved students’ I.T.
+                relatedsoftware and hardware issues where I aided 300 students and recommend 20% of them to the Ashesi
+                Support Centre for further assistance.</p>
+        </div>
+    </div>
+
+    <div class="projects" id="projects">
         <h2>Projects</h2><span></span>
         <div class="project-section">
             <div class="content">
@@ -73,7 +222,7 @@
                     <h3>MySpace Properties Enquiries</h3>
                     <p>An in-house web application built for tracking customers’ enquiries on real-estate property to
                         either buy or sell utilizing Angular, TypeScript, HTML, SASS and Firebase.</p>
-                    <a href="">Check it out</a>
+                    <a href="https://customerlist.netlify.app/" target="_blank" rel="noopener">Check it out</a>
                 </div>
             </div>
 
@@ -84,7 +233,7 @@
                     <h3>Hack Club Kenya Mentors Sign-Up</h3>
                     <p>Used to sign up and automatically email mentors upon registration. Hack Club Kenya is a
                         nonprofit network of high school programming clubs to teach beginners to code.</p>
-                    <a href="">Check it out</a>
+                    <a href="https://hackclubkenya.netlify.app/" target="_blank" rel="noopener">Check it out</a>
                 </div>
             </div>
 
@@ -92,10 +241,10 @@
                 <div class="third background">
                 </div>
                 <div class="footer">
-                    <h3>iProperty</h3>
-                    <p>A system ought to be used by property owners, agents and buyers to buy and sell real estate
-                        property courtesy of MySpace Properties, Kenya. </p>
-                    <a href="">Check it out</a>
+                    <h3>Portfolio</h3>
+                    <p>I built a simple portfolio that showcases but not limited to experiences, education,
+                        projects, community work, profile and technical stack. I have Open Sourced this project.</p>
+                    <a href="https://waynegakuo.netlify.app/" target="_blank" rel="noopener">Check it out</a>
                 </div>
             </div>
             <div class="content">
@@ -106,7 +255,7 @@
                     <p>A website that was previously used for signing up users and gives them authorized access to
                         content provided by the host. The content was a series of videos from experts with regards to
                         the virtual retreat</p>
-                    <a href="">Check it out</a>
+                    <a href="https://virtualretreat.netlify.app/" target="_blank" rel="noopener">Check it out</a>
                 </div>
             </div>
             <div class="content">
@@ -117,11 +266,26 @@
                     <p>A simple web app that uses the Screenshot API to take screenshots of sites by using URLs. One
                         pastes the link of the URL, provides the API key provided by the Screenshot API site and the
                         screenshot is taken and shown to the user.</p>
-                    <a href="">Check it out</a>
+                    <a href="https://webscreenshot.netlify.app/" target="_blank" rel="noopener">Check it out</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="sixth background">
+                </div>
+                <div class="footer">
+                    <h3>Progressive Web App with MSP Kenya</h3>
+                    <p>A PWA built during demo time for a speaking session with MSP Kenya. This is a web application
+                        that looks and feel like a native app. This means it can provide a rich user experience, the
+                        same way a native app can. One will be prompted to install it on their devices.</p>
+                    <a href="https://pwamspdemo.netlify.app/" target="_blank" rel="noopener">Check it out</a>
                 </div>
             </div>
         </div>
     </div>
+    <footer>
+        <span class="footer_desc">Done with &#10084; by <a class="git_link" href="https://github.com/waynegakuo"
+                target="_blank" rel="noopener">Wayne Gakuo</a></span>
+    </footer>
 </body>
 <script src="js/index.js"></script>
 
