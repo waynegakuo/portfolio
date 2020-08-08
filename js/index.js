@@ -1,20 +1,15 @@
 function toggleTheme() {
     const body = document.querySelector("body");
+    const icon = document.getElementById("icon");
     if (body.className === 'dark') {
         body.className = 'light'
-    }
-    else {
-        body.className = 'dark'
-    }
-    const icon = document.getElementById("icon");
-    if (icon.className === 'fa fa-sun-o') {
         icon.className = 'fa fa-moon-o'
     }
     else {
+        body.className = 'dark'
         icon.className = 'fa fa-sun-o'
     }
 }
-
 
 const burger = document.getElementById('burger');
 const ul = document.querySelector('nav ul');
