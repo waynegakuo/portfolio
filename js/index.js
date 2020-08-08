@@ -6,17 +6,15 @@ function toggleTheme() {
     else {
         body.className = 'dark'
     }
-}
-
-function toggleThemeImage() {
-    const body = document.getElementById("icon");
-    if (body.className === 'fa fa-sun-o') {
-        body.className = 'fa fa-moon-o'
+    const icon = document.getElementById("icon");
+    if (icon.className === 'fa fa-sun-o') {
+        icon.className = 'fa fa-moon-o'
     }
     else {
-        body.className = 'fa fa-sun-o'
+        icon.className = 'fa fa-sun-o'
     }
 }
+
 
 const burger = document.getElementById('burger');
 const ul = document.querySelector('nav ul');
