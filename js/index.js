@@ -1,10 +1,20 @@
-function toggleTheme(theme) {
+function toggleTheme() {
     const body = document.querySelector("body");
-    body.classList.remove('dark', 'light')
-    if (theme == 'dark') {
-        body.classList.add('dark')
-    } else {
-        body.classList.add('light')
+    if (body.className === 'dark') {
+        body.className = 'light'
+    }
+    else {
+        body.className = 'dark'
+    }
+}
+
+function toggleThemeImage() {
+    const body = document.getElementById("icon");
+    if (body.className === 'fa fa-sun-o') {
+        body.className = 'fa fa-moon-o'
+    }
+    else {
+        body.className = 'fa fa-sun-o'
     }
 }
 
