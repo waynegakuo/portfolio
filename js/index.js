@@ -1,10 +1,13 @@
-function toggleTheme(theme) {
+function toggleTheme() {
     const body = document.querySelector("body");
-    body.classList.remove('dark', 'light')
-    if (theme == 'dark') {
-        body.classList.add('dark')
-    } else {
-        body.classList.add('light')
+    const icon = document.getElementById("icon");
+    if (body.className === 'dark') {
+        body.className = 'light'
+        icon.className = 'fa fa-moon-o'
+    }
+    else {
+        body.className = 'dark'
+        icon.className = 'fa fa-sun-o'
     }
 }
 
