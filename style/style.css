@@ -363,7 +363,7 @@ nav ul li a:hover::after {
   height: 207px;
   width: 100%;
   padding: 10px;
-  background: url("../assets/img/pwa.png");
+  background: url("../assets/img/gcsp_web.png");
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
