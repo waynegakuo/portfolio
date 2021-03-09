@@ -381,6 +381,17 @@ nav ul li a:hover::after {
   cursor: pointer;
   border-radius: 5px 5px 0 0;
 }
+.projects .project-section .content .eighth {
+  height: 207px;
+  width: 100%;
+  padding: 10px;
+  background: url("../assets/img/weather_app.png");
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+}
 
 .projects .project-section .content .footer {
   padding: 16px 10px;
