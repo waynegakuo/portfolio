@@ -154,6 +154,11 @@ nav ul li a:hover::after {
 .profile .bio-text .social-media i {
   margin: 0 10px 10px 10px;
 }
+
+.profile .bio-text .social-media i:first-child {
+  margin-left: 0px;
+}
+
 .profile .bio-text .social-media i a {
   text-decoration: none;
   color: inherit;
@@ -213,6 +218,7 @@ nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: space-between;
 }
 .communities .communities-details .details .logos {
   width: 70%;
@@ -523,7 +529,7 @@ footer > span > a {
     width: 100%;
     margin: 10px 0 10px 0;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
   }
   .communities .communities-details .details .logos {
     width: 100%;
