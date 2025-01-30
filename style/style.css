@@ -222,18 +222,22 @@ nav ul li a:hover::after {
   flex-direction: column;
 }
 .communities .communities-details {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
 }
 
 .communities .communities-details .details {
-  width: 490px;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 1.5px;
+  border-radius: 8px;
+  padding: 20px;
 }
 .communities .communities-details .details .logos {
   width: 70%;
@@ -462,10 +466,24 @@ footer > span > a {
 }
 
 /* responsiveness */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767.98px) {
   .featured > iframe {
     width: 100% !important;
   }
+
+  .projects .project-section {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .experience-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .communities .communities-details {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+
 }
 @media (max-width: 480px) {
   .burger {
