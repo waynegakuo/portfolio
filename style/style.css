@@ -32,12 +32,10 @@ body.dark {
 
 button {
   border-style: none;
-  border-radius: 5px;
   cursor: pointer;
-  padding: 10px;
-  background-color: #2c405e;
-  color: white;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: inherit;
+  color: inherit;
+  outline: none;
 }
 button:focus {
   outline-style: none;
@@ -63,7 +61,7 @@ nav p {
 .burger {
   border: 0;
   background-color: transparent;
-  color: #0594ec;
+  color: inherit;
   font-size: 20px;
   display: none;
 }
@@ -165,8 +163,23 @@ nav ul li a:hover::after {
   font-weight: bold;
   margin-left: 5px;
 }
+
+.featured-videos-section {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.featured-videos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 .featured {
-  width: 100%;
+  /*width: 100%;*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -177,7 +190,8 @@ nav ul li a:hover::after {
 .projects > h2,
 .communities > h2,
 .experience > h2,
-.education > h2 {
+.education > h2,
+.featured-videos-section > h2{
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -186,7 +200,8 @@ nav ul li a:hover::after {
 .projects > span,
 .communities > span,
 .experience > span,
-.education > span {
+.education > span,
+.featured-videos-section > span{
   padding: 0;
   margin: 0;
   width: 70px;
@@ -209,7 +224,7 @@ nav ul li a:hover::after {
 .communities .communities-details {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .communities .communities-details .details {
@@ -224,6 +239,7 @@ nav ul li a:hover::after {
   width: 70%;
   background-color: #fff;
   border-radius: 5px;
+  padding: 10px;
 }
 .communities .communities-details .details .role {
   margin-top: 3px;
@@ -263,11 +279,25 @@ nav ul li a:hover::after {
   margin-right: 5px;
 }
 
+.experience-container {
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
 .experience .exp {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding: 5px;
+
+  box-shadow: 0px 0px 1.5px;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.experience .description {
+  text-align: justify;
 }
 .experience .exp .role {
   font-weight: bold;
@@ -291,13 +321,11 @@ nav ul li a:hover::after {
 
 .projects .project-section {
   padding: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  align-self: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 10px;
 }
 .projects .project-section .content {
-  width: 400px;
   margin: 10px;
 }
 .projects .background {
@@ -307,96 +335,59 @@ nav ul li a:hover::after {
   cursor: pointer;
 }
 
-.projects .project-section .content .top {
+.projects .project-section .content .bg-image {
   height: 207px;
   width: 100%;
   padding: 10px;
-  background: url("../assets/img/myspace.png");
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   cursor: pointer;
   border-radius: 5px 5px 0 0;
+  box-shadow: 0px 0px 2px;
 }
 
-.projects .project-section .content .second {
-  height: 207px;
-  width: 100%;
-  padding: 10px;
+.projects .project-section .content .myspace-enq {
+  background: url("../assets/img/myspace.png");
+}
+
+.projects .project-section .content .hack-club {
   background: url("../assets/img/hkenya.png");
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  cursor: pointer;
-  border-radius: 5px 5px 0 0;
 }
 
 .projects .project-section .content .third {
-  height: 207px;
-  width: 100%;
-  padding: 10px;
   background: url("../assets/img/portfolio.png");
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  cursor: pointer;
-  border-radius: 5px 5px 0 0;
 }
 
-.projects .project-section .content .fourth {
-  height: 207px;
-  width: 100%;
-  padding: 10px;
+.projects .project-section .content .virt-retreat {
   background: url("../assets/img/vretreat.png");
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  cursor: pointer;
-  border-radius: 5px 5px 0 0;
 }
-.projects .project-section .content .fifth {
-  height: 207px;
-  width: 100%;
-  padding: 10px;
-  background: url("../assets/img/webshot.png");
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  cursor: pointer;
-  border-radius: 5px 5px 0 0;
+.projects .project-section .content .sky-garden {
+  background: url("../assets/img/projects/skygarden.png");
 }
-.projects .project-section .content .sixth {
-  height: 207px;
-  width: 100%;
-  padding: 10px;
+.projects .project-section .content .sky-tickets {
+  background: url("../assets/img/projects/skytickets_app.png");
+}
+.projects .project-section .content .edvntrs-info {
+  background: url("../assets/img/projects/edvntrs_info.png");
+}
+.projects .project-section .content .edvntrs-anna {
+  background: url("../assets/img/projects/edvntrs_anna.png");
+}
+.projects .project-section .content .enone-loan-app {
+  background: url("../assets/img/projects/enone_loan.png");
+}
+.projects .project-section .content .resume-bldr {
+  background: url("../assets/img/projects/resume_bldr.png");
+}
+.projects .project-section .content .gcsp-app {
   background: url("../assets/img/gcsp_web.png");
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  cursor: pointer;
-  border-radius: 5px 5px 0 0;
 }
-.projects .project-section .content .seventh {
-  height: 207px;
-  width: 100%;
-  padding: 10px;
+.projects .project-section .content .devfest-app {
   background: url("../assets/img/devfest_kenya.png");
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  cursor: pointer;
-  border-radius: 5px 5px 0 0;
 }
-.projects .project-section .content .eighth {
-  height: 207px;
-  width: 100%;
-  padding: 10px;
+.projects .project-section .content .weather-app {
   background: url("../assets/img/weather_app.png");
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  cursor: pointer;
-  border-radius: 5px 5px 0 0;
 }
 
 .projects .project-section .content .footer {
@@ -404,8 +395,9 @@ nav ul li a:hover::after {
   display: flex;
   flex-direction: column;
   /* background: #fff; */
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 1.5px;
   border-radius: 0 0 5px 5px;
+  min-height: 230px;
 }
 .projects .project-section .content .footer > h3 {
   margin: 0;
@@ -470,6 +462,11 @@ footer > span > a {
 }
 
 /* responsiveness */
+@media screen and (max-width: 768px) {
+  .featured > iframe {
+    width: 100% !important;
+  }
+}
 @media (max-width: 480px) {
   .burger {
     display: block;
@@ -560,5 +557,13 @@ footer > span > a {
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+
+  .toggle-bar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
   }
 }
