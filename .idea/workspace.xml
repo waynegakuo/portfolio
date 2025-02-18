@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2faf4e4-6747-4aca-8c1e-4d5325771e3d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/img/angular_kenya_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/angular_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/firebase_logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/gdg_pwani_logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/profile_potrait.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/projects/skygarden.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/img/projects/skytickets.png" afterDir="false" />
+    <list default="true" id="a2faf4e4-6747-4aca-8c1e-4d5325771e3d" name="Changes" comment="feat(project): update portfolio v3.0: fix issue with card alignments on grid for mobile view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/angular-ke-logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,32 +23,33 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="1zUbgSDj3IyvieZ21H8Ve9cFqW8" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JavaScript Debug.index.html.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/Wayne/Desktop/Work/Portfolio/portfolio/assets/img/projects",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Wayne/Desktop/Work/Portfolio/portfolio/assets/resume&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Wayne\Desktop\Work\Portfolio\portfolio\assets\resume" />
       <recent name="C:\Users\Wayne\Desktop\Work\Portfolio\portfolio\assets\img\projects" />
       <recent name="C:\Users\Wayne\Desktop\Work\Portfolio\portfolio\assets\img" />
     </key>
@@ -93,8 +84,26 @@
       <workItem from="1645172150337" duration="11000" />
       <workItem from="1664492917607" duration="151000" />
       <workItem from="1664493202498" duration="1066000" />
-      <workItem from="1738209296176" duration="16117000" />
+      <workItem from="1738209296176" duration="30637000" />
+      <workItem from="1738350499896" duration="1540000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(project): update portfolio v3.0: &#10;- update experience&#10;- update profile picture&#10;- update resume&#10;- update notable projects&#10;- re-arrange sections, with those prioritized on top&#10;- update logos&#10;- upload new project assets">
+      <option name="closed" value="true" />
+      <created>1738247218310</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1738247218318</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat(project): update portfolio v3.0: fix issue with card alignments on grid for mobile view">
+      <option name="closed" value="true" />
+      <created>1738251963148</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738251963148</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,5 +119,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(project): update portfolio v3.0: &#10;- update experience&#10;- update profile picture&#10;- update resume&#10;- update notable projects&#10;- re-arrange sections, with those prioritized on top&#10;- update logos&#10;- upload new project assets" />
+    <MESSAGE value="feat(project): update portfolio v3.0: fix issue with card alignments on grid for mobile view" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(project): update portfolio v3.0: fix issue with card alignments on grid for mobile view" />
   </component>
 </project>
