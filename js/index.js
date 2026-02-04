@@ -3,11 +3,11 @@ function toggleTheme() {
     const icon = document.getElementById("icon");
     if (body.classList.contains('light')) {
         body.classList.remove('light');
-        icon.className = 'fa fa-sun-o'
+        icon.className = 'fa-solid fa-sun'
     }
     else {
         body.classList.add('light');
-        icon.className = 'fa fa-moon-o'
+        icon.className = 'fa-solid fa-moon'
     }
 }
 
