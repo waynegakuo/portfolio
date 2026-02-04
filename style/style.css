@@ -12,17 +12,13 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   transition: all 0.3s;
-  color: #2c405e;
+  background-color: #222222;
+  color: #f5f5f5;
 }
 
 body.light {
   background-color: #ffff;
   color: #2c405e;
-}
-
-body.dark {
-  background-color: #222222;
-  color: #f5f5f5;
 }
 
 .projects .project-section .content .footer h1 {
@@ -90,7 +86,7 @@ nav ul li a {
 
 nav ul li a::after {
   content: "";
-  background-color: #2c405e;
+  background-color: #f5f5f5;
   position: absolute;
   left: 0;
   bottom: -18px;
@@ -98,6 +94,10 @@ nav ul li a::after {
   width: 100%;
   opacity: 0;
   transition: transform 0.2s ease;
+}
+
+body.light nav ul li a::after {
+  background-color: #2c405e;
 }
 
 nav ul li a:hover::after {
