@@ -351,6 +351,19 @@ nav ul li a:hover::after {
   box-shadow: 0px 0px 2px;
 }
 
+.projects .project-section .content .nova-reel {
+  background: url("../assets/img/projects/nova_reel.png");
+}
+.projects .project-section .content .nano-studio {
+  background: url("../assets/img/projects/nano_studio.png");
+}
+.projects .project-section .content .wander-genie {
+  background: url("../assets/img/projects/wander_genie.png");
+}
+.projects .project-section .content .bytewise {
+  background: url("../assets/img/projects/bytewise.png");
+}
+
 .projects .project-section .content .myspace-enq {
   background: url("../assets/img/myspace.png");
 }
