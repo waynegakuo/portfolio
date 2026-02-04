@@ -1,0 +1,10 @@
+# Ignore JetBrains IDE workspace files
+.idea/
+*.iml
+
+# Common editor/workspace folders
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
