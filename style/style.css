@@ -363,19 +363,13 @@ nav ul li a:hover::after {
 .projects .project-section .content .bytewise {
   background: url("../assets/img/projects/bytewise.png");
 }
-
-.projects .project-section .content .myspace-enq {
-  background: url("../assets/img/myspace.png");
-}
-
-.projects .project-section .content .hack-club {
-  background: url("../assets/img/hkenya.png");
+.projects .project-section .content .ng-kenya {
+  background: url("../assets/img/projects/ng_kenya.png");
 }
 
 .projects .project-section .content .third {
   background: url("../assets/img/portfolio.png");
 }
-
 .projects .project-section .content .virt-retreat {
   background: url("../assets/img/vretreat.png");
 }
