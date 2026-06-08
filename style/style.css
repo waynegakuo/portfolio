@@ -366,6 +366,9 @@ nav ul li a:hover::after {
 .projects .project-section .content .ng-kenya {
   background: url("../assets/img/projects/ng_kenya.png");
 }
+.projects .project-section .content .shop-drop {
+  background: url("../assets/img/projects/shop_n_drop.png");
+}
 
 .projects .project-section .content .third {
   background: url("../assets/img/portfolio.png");
@@ -396,9 +399,6 @@ nav ul li a:hover::after {
 }
 .projects .project-section .content .devfest-app {
   background: url("../assets/img/devfest_kenya.png");
-}
-.projects .project-section .content .weather-app {
-  background: url("../assets/img/weather_app.png");
 }
 
 .projects .project-section .content .footer {
