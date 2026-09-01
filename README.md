@@ -1,11 +1,32 @@
-# Personal Portfolio
+# Wayne Gakuo — Portfolio
 
-### Light Mode
-![Portfolio Screenshot-Light Mode](/assets/img/portfolio.png)
+Server-rendered Angular portfolio with a neo-brutalist interface. It showcases experience, shipped work, community leadership, education, talks, and a downloadable résumé.
 
-### Dark Mode
-![Portfolio Screenshot-Dark Mode](/assets/img/dark_portfolio.png)
+## Stack
 
-This is a simple & responsive personal portfolio that showcases one's but not limited to experiences, education, projects, community work, profile and technical stack. This project is Open Sourced & therefore feel free to clone the repo and create your own portfolio and edit it to your liking. Enjoy! :sparkles: :tada: :octocat:
+- Angular 22 with `@angular/ssr` (SSR + prerender)
+- Standalone components, lazy routes, hydration
+- SCSS neo-brutalist design system
 
-Done with :heart: by @waynegakuo
+## Prerequisites
+
+Node.js **22.22.3+**, **24.15+**, or **26+** (this repo includes `.nvmrc` for Node 26).
+
+```bash
+nvm use
+npm install
+```
+
+## Scripts
+
+```bash
+npm start                 # SSR-enabled dev server
+npm run build             # Production browser + server bundles, prerendered routes
+npm run serve:ssr:portfolio-ssr
+```
+
+Dev server: [http://localhost:4200](http://localhost:4200)
+
+## Deploy
+
+`npm run build` prerenders Home, Work, Experience, Communities, and Education. Publish `dist/portfolio-ssr/browser` (Netlify config is included) or run the Express server in `dist/portfolio-ssr/server`.

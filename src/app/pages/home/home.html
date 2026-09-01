@@ -1,0 +1,241 @@
+<section class="hero">
+  <div class="hero__copy">
+    <p class="kicker">{{ site.role }}</p>
+    <h1 class="hero__title">
+      <span>Wayne</span>
+      <span>Gakuo</span>
+    </h1>
+    <p class="hero__lead">{{ site.headline }}</p>
+    <p class="hero__meta">{{ site.kicker }}</p>
+    <div class="hero__cta">
+      <a routerLink="/work" class="btn btn--primary">See the work</a>
+      <a [href]="site.resumeHref" class="btn btn--ghost" target="_blank" rel="noopener">
+        Résumé
+      </a>
+      <a [href]="'mailto:' + site.email" class="btn btn--ghost">Email</a>
+    </div>
+  </div>
+
+  <figure class="hero__portrait">
+    <img
+      [ngSrc]="site.portrait"
+      width="1134"
+      height="1145"
+      priority
+      alt="Portrait of Wayne Gakuo, Google Developer Expert for Angular"
+    />
+  </figure>
+</section>
+
+<section class="band practice-band" aria-label="What I work on">
+  <div class="practice">
+    @for (item of practices; track item.title) {
+      <article class="practice-card">
+        <p class="kicker">{{ item.kicker }}</p>
+        <p class="practice-card__title">{{ item.title }}</p>
+        <p>{{ item.copy }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="band" id="work">
+  <header class="section-head">
+    <span class="index">01</span>
+    <div>
+      <p class="kicker">Frontend, shipped</p>
+      <h2>Selected work</h2>
+    </div>
+    <a routerLink="/work" class="btn btn--ghost section-head__action">All projects</a>
+  </header>
+
+  <div class="project-grid">
+    @for (project of featured; track project.href) {
+      <article class="project-card">
+        <a [href]="project.href" target="_blank" rel="noopener" class="project-card__media">
+          <img [src]="project.image" [alt]="project.title" />
+        </a>
+        <div class="project-card__body">
+          <div class="tag-row">
+            @for (tag of project.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
+          <h3>{{ project.title }}</h3>
+          <p>{{ project.description }}</p>
+          <a [href]="project.href" class="text-link" target="_blank" rel="noopener">
+            View project
+          </a>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="band" id="about">
+  <header class="section-head">
+    <span class="index">02</span>
+    <div>
+      <p class="kicker">Profile</p>
+      <h2>About</h2>
+    </div>
+  </header>
+
+  <div class="about">
+    <div class="about__text">
+      <p>{{ site.about }}</p>
+      <p>{{ site.aboutExtra }}</p>
+    </div>
+    <aside class="about__aside">
+      <p class="kicker">Connect</p>
+      <ul class="social-list">
+        @for (link of socials; track link.href) {
+          <li>
+            <a [href]="link.href" target="_blank" rel="noopener">{{ link.label }}</a>
+          </li>
+        }
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section class="band" id="experience">
+  <header class="section-head">
+    <span class="index">03</span>
+    <div>
+      <p class="kicker">Career</p>
+      <h2>Latest roles</h2>
+    </div>
+    <a routerLink="/experience" class="btn btn--ghost section-head__action">Full timeline</a>
+  </header>
+
+  <div class="exp-list">
+    @for (job of experience; track job.role + job.company) {
+      <article class="exp-card">
+        @if (job.current) {
+          <span class="tag tag--accent">Current</span>
+        }
+        <h3>{{ job.role }}</h3>
+        <p class="exp-card__meta">{{ job.company }} · {{ job.location }}</p>
+        <p class="exp-card__period">{{ job.period }}</p>
+        <p>{{ job.description }}</p>
+        <div class="tag-row">
+          @for (item of job.stack; track item) {
+            <span class="tag">{{ item }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="band" id="stack">
+  <header class="section-head">
+    <span class="index">04</span>
+    <div>
+      <p class="kicker">How I build</p>
+      <h2>Stack</h2>
+    </div>
+  </header>
+
+  <ul class="stack-grid">
+    @for (item of stack; track item.name) {
+      <li class="stack-card">
+        <img [src]="item.image" [alt]="item.name" />
+        <span>{{ item.name }}</span>
+      </li>
+    }
+  </ul>
+</section>
+
+<section class="band" id="media">
+  <header class="section-head">
+    <span class="index">05</span>
+    <div>
+      <p class="kicker">Talks & features</p>
+      <h2>Media</h2>
+    </div>
+  </header>
+
+  <div class="media-grid">
+    @for (video of media; track video.id) {
+      <article class="media-card">
+        @if (playing() === video.id) {
+          <div class="media-card__frame">
+            <iframe
+              [src]="embed(video.id)"
+              [title]="video.title"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        } @else {
+          <button type="button" class="media-card__play" (click)="play(video.id)">
+            <img [src]="thumb(video.id)" [alt]="video.title" width="480" height="360" />
+            <span class="play-mark">Play</span>
+          </button>
+        }
+        <div class="media-card__meta">
+          <h3>{{ video.title }}</h3>
+          <p>{{ video.source }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="band" id="communities">
+  <header class="section-head">
+    <span class="index">06</span>
+    <div>
+      <p class="kicker">Leadership</p>
+      <h2>Communities</h2>
+    </div>
+    <a routerLink="/communities" class="btn btn--ghost section-head__action">Details</a>
+  </header>
+
+  <div class="community-grid">
+    @for (community of communities; track community.name) {
+      <article class="community-card">
+        <div class="community-card__logo">
+          <img [src]="community.logo" [alt]="community.logoAlt" />
+        </div>
+        <p class="kicker">{{ community.role }}</p>
+        <h3>{{ community.name }}</h3>
+        <p>{{ community.description }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="band" id="education">
+  <header class="section-head">
+    <span class="index">07</span>
+    <div>
+      <p class="kicker">Foundation</p>
+      <h2>Education</h2>
+    </div>
+    <a routerLink="/education" class="btn btn--ghost section-head__action">Read more</a>
+  </header>
+
+  <div class="edu-grid">
+    @for (item of education; track item.course) {
+      <article class="edu-card">
+        <h3>{{ item.course }}</h3>
+        <p class="exp-card__meta">{{ item.school }}</p>
+        <p class="exp-card__period">{{ item.period }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="contact-banner" id="contact">
+  <p class="kicker">Open to collaborations</p>
+  <h2>Let’s ship the next interface.</h2>
+  <p>Angular systems, design systems, or AI-enabled products that have to hold up in production.</p>
+  <div class="hero__cta">
+    <a [href]="'mailto:' + site.email" class="btn btn--primary">{{ site.email }}</a>
+    <a [href]="site.resumeHref" class="btn btn--ghost" target="_blank" rel="noopener">Résumé</a>
+  </div>
+</section>

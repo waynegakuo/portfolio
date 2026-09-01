@@ -1,0 +1,44 @@
+<section class="page-hero">
+  <p class="kicker">Selected product</p>
+  <h1>Work</h1>
+  <p class="page-hero__lead">
+    Enterprise commerce, AI-powered platforms, and community products — Angular frontends I designed,
+    built, and shipped.
+  </p>
+</section>
+
+<div class="filter-row" role="tablist" aria-label="Filter projects">
+  @for (item of filters; track item) {
+    <button
+      type="button"
+      class="btn btn--sm"
+      [class.btn--primary]="filter() === item"
+      [class.btn--ghost]="filter() !== item"
+      (click)="filter.set(item)"
+    >
+      {{ item }}
+    </button>
+  }
+</div>
+
+<div class="project-grid">
+  @for (project of projects(); track project.href) {
+    <article class="project-card">
+      <a [href]="project.href" target="_blank" rel="noopener" class="project-card__media">
+        <img [src]="project.image" [alt]="project.title" />
+      </a>
+      <div class="project-card__body">
+        <div class="tag-row">
+          @for (tag of project.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <a [href]="project.href" class="text-link" target="_blank" rel="noopener">View project</a>
+      </div>
+    </article>
+  } @empty {
+    <p class="empty">Nothing in this lane — yet.</p>
+  }
+</div>

@@ -1,0 +1,18 @@
+<section class="page-hero">
+  <p class="kicker">Foundation</p>
+  <h1>Education</h1>
+  <p class="page-hero__lead">
+    Scholarships that backed the work: MasterCard Foundation at Ashesi, Wings to Fly at Aga Khan.
+  </p>
+</section>
+
+<div class="edu-page">
+  @for (item of items; track item.course) {
+    <article class="edu-card edu-card--full">
+      <h2>{{ item.course }}</h2>
+      <p class="exp-card__meta">{{ item.school }}</p>
+      <p class="exp-card__period">{{ item.period }}</p>
+      <p>{{ item.description }}</p>
+    </article>
+  }
+</div>

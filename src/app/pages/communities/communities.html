@@ -1,0 +1,27 @@
+<section class="page-hero">
+  <p class="kicker">Leadership</p>
+  <h1>Communities</h1>
+  <p class="page-hero__lead">
+    I don’t just write Angular — I teach it, gather people around it, and ship conferences with it.
+  </p>
+</section>
+
+<div class="community-grid community-grid--page">
+  @for (community of communities; track community.name) {
+    <article class="community-card">
+      <div class="community-card__logo">
+        <img [src]="community.logo" [alt]="community.logoAlt" />
+      </div>
+      <p class="kicker">{{ community.role }}</p>
+      <h2>{{ community.name }}</h2>
+      <p>{{ community.description }}</p>
+      <div class="tag-row">
+        @for (social of community.socials; track social.href) {
+          <a class="text-link" [href]="social.href" target="_blank" rel="noopener">
+            {{ social.label }}
+          </a>
+        }
+      </div>
+    </article>
+  }
+</div>

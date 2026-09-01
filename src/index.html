@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Wayne Gakuo · Frontend Engineer · GDE Angular</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Frontend Engineer and Google Developer Expert for Angular. Design systems, enterprise web apps, and AI-powered platforms."
+    />
+    <meta name="theme-color" content="#111111" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Outfit:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('wg-theme');
+          var theme =
+            stored === 'dark' || stored === 'light'
+              ? stored
+              : window.matchMedia('(prefers-color-scheme: dark)').matches
+                ? 'dark'
+                : 'light';
+          document.documentElement.dataset.theme = theme;
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Wayne Gakuo",
+        "url": "https://waynegakuo.netlify.app",
+        "email": "waynejotham@gmail.com",
+        "jobTitle": "Frontend Engineer",
+        "image": "https://waynegakuo.netlify.app/assets/img/profile_portrait.png",
+        "sameAs": [
+          "https://www.linkedin.com/in/waynegakuo/",
+          "https://github.com/waynegakuo",
+          "https://x.com/wayne_gakuo"
+        ],
+        "knowsAbout": [
+          "Angular",
+          "TypeScript",
+          "Design Systems",
+          "Google Cloud",
+          "Firebase",
+          "AI-powered platforms"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<section class="page-hero">
+  <p class="kicker">Career</p>
+  <h1>Experience</h1>
+  <p class="page-hero__lead">
+    From founding architecture to marketplace leadership, design systems, and hands-on Angular
+    frontend engineering.
+  </p>
+</section>
+
+<div class="timeline">
+  @for (job of jobs; track job.role + job.company; let i = $index) {
+    <article class="timeline__item">
+      <span class="timeline__mark">{{ i + 1 < 10 ? '0' + (i + 1) : i + 1 }}</span>
+      <div class="exp-card">
+        @if (job.current) {
+          <span class="tag tag--accent">Current</span>
+        }
+        <h2>{{ job.role }}</h2>
+        <p class="exp-card__meta">{{ job.company }} · {{ job.location }}</p>
+        <p class="exp-card__period">{{ job.period }}</p>
+        <p>{{ job.description }}</p>
+        <div class="tag-row">
+          @for (item of job.stack; track item) {
+            <span class="tag">{{ item }}</span>
+          }
+        </div>
+      </div>
+    </article>
+  }
+</div>
