@@ -27,6 +27,7 @@
     "@angular/router": "^22.1.0",
     "@angular/ssr": "^22.1.6",
     "express": "^5.1.0",
+    "firebase": "^12.18.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },

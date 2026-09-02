@@ -18,6 +18,7 @@ MIT licensed. Fork it, restyle it, ship it.
 - Typed content in one file (projects, roles, talks, stack, SEO)
 - Light and dark theme
 - Angular 22 with SSR and prerendered routes, so pages stay indexable
+- Firebase Analytics page views (enable Google Analytics on your Firebase project)
 - Firebase Hosting deploy script (or point the `browser` output at any static host)
 
 ## Get started
@@ -44,6 +45,7 @@ Almost everything people see lives in data and assets. You should not need to re
 4. **Header mark** — the W lockup is inline SVG in `src/app/layout/site-header/site-header.html`.
 5. **SEO** — update `SITE.url`, `src/index.html` (title, description, JSON-LD), `public/sitemap.xml`, and `public/robots.txt`.
 6. **Look and feel** — tokens in `src/styles.scss` (`:root` and `html[data-theme='dark']`) control paper, ink, yellow, and type.
+7. **Analytics** — replace `src/app/core/data/analytics.ts` with your Firebase web app config (`npx firebase apps:sdkconfig WEB`). Enable Google Analytics on the Firebase project. Localhost is ignored so local work does not pollute reports.
 
 If you add or rename routes, also update `src/app/app.routes.ts` and `src/app/app.routes.server.ts` so new pages prerender.
 
