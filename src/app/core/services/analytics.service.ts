@@ -2,9 +2,15 @@ import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 import { Injectable, PLATFORM_ID, afterNextRender, inject } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { NavigationEnd, Router } from '@angular/router';
-import type { Analytics } from 'firebase/analytics';
 import { filter } from 'rxjs';
 import { FIREBASE_WEB } from '../data/analytics';
+
+type GtagFn = (...args: unknown[]) => void;
+
+type AnalyticsWindow = Window & {
+  dataLayer: unknown[];
+  gtag: GtagFn;
+};
 
 @Injectable({ providedIn: 'root' })
 export class AnalyticsService {
@@ -12,13 +18,12 @@ export class AnalyticsService {
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
   private readonly title = inject(Title);
-  private analytics: Analytics | null = null;
-  private logPageView: ((path: string) => void) | null = null;
+  private installed = false;
   private lastPath = '';
-  private pendingPath: string | null = null;
 
   constructor() {
-    if (!isPlatformBrowser(this.platformId) || !FIREBASE_WEB.appId || !FIREBASE_WEB.apiKey) {
+    const measurementId = FIREBASE_WEB.measurementId;
+    if (!isPlatformBrowser(this.platformId) || !measurementId) {
       return;
     }
 
@@ -27,66 +32,49 @@ export class AnalyticsService {
       return;
     }
 
+    this.install(win as unknown as AnalyticsWindow, measurementId);
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
       .subscribe((event) => this.pageview(event.urlAfterRedirects));
     afterNextRender(() => this.pageview(this.router.url));
-    void this.init();
   }
 
   private isLocal(hostname: string): boolean {
     return hostname === 'localhost' || hostname === '127.0.0.1';
   }
 
-  private async init(): Promise<void> {
-    try {
-      const [{ initializeApp, getApps }, analytics] = await Promise.all([
-        import('firebase/app'),
-        import('firebase/analytics'),
-      ]);
+  private install(win: AnalyticsWindow, id: string): void {
+    win.dataLayer = win.dataLayer ?? [];
+    win.gtag = function gtag() {
+      win.dataLayer.push(arguments);
+    };
+    win.gtag('js', new Date());
+    win.gtag('config', id, { send_page_view: false });
 
-      if (!(await analytics.isSupported())) {
-        return;
-      }
-
-      const app = getApps()[0] ?? initializeApp(FIREBASE_WEB);
-      this.analytics = analytics.initializeAnalytics(app, {
-        config: { send_page_view: false },
-      });
-      this.logPageView = (path: string) => {
-        if (!this.analytics) {
-          return;
-        }
-
-        analytics.logEvent(this.analytics, 'page_view', {
-          page_path: path,
-          page_title: this.title.getTitle(),
-          page_location: this.document.location.href,
-        });
-      };
-
-      if (this.pendingPath) {
-        const path = this.pendingPath;
-        this.pendingPath = null;
-        this.pageview(path);
-      }
-    } catch {
-      this.analytics = null;
-      this.logPageView = null;
-    }
+    const script = this.document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+    this.document.head.appendChild(script);
+    this.installed = true;
   }
 
   private pageview(path: string): void {
-    if (path === this.lastPath) {
-      return;
-    }
-
-    if (!this.logPageView) {
-      this.pendingPath = path;
+    if (!this.installed || path === this.lastPath) {
       return;
     }
 
     this.lastPath = path;
-    this.logPageView(path);
+    const win = this.document.defaultView as unknown as AnalyticsWindow | null;
+    const measurementId = FIREBASE_WEB.measurementId;
+    if (!win?.gtag || !measurementId) {
+      return;
+    }
+
+    win.gtag('event', 'page_view', {
+      send_to: measurementId,
+      page_path: path,
+      page_title: this.title.getTitle(),
+      page_location: this.document.location.href,
+    });
   }
 }
