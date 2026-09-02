@@ -69,6 +69,8 @@ npm run deploy                 # Prerender and deploy to the Firebase project in
 
 **Anywhere else:** publish `dist/portfolio-ssr/browser` as static files. Keep `cleanUrls` (or equivalent) so `/work` serves `work/index.html`. Do not rewrite every path to the home `index.html` or you lose per-page SEO.
 
+This repo’s `netlify.toml` 301s `waynegakuo.netlify.app` to the Firebase site. If you fork and deploy to Netlify, remove that file or change the redirect target.
+
 ## License
 
 [MIT](LICENSE.md). Use it for your own portfolio. A credit in the footer is welcome, not required.

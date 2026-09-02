@@ -1,0 +1,13 @@
+# Legacy host for waynegakuo.netlify.app.
+# Sends every path to the Firebase site. If you forked this repo and
+# want to host on Netlify, delete this file or point `to` at your own domain.
+
+[build]
+  command = "true"
+  publish = "netlify-legacy"
+
+[[redirects]]
+  from = "/*"
+  to = "https://waynegakuo.web.app/:splat"
+  status = 301
+  force = true
