@@ -11,7 +11,9 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:portfolio-ssr": "node dist/portfolio-ssr/server/server.mjs"
+    "serve:ssr:portfolio-ssr": "node dist/portfolio-ssr/server/server.mjs",
+    "build:hosting": "ng build && node scripts/firebase-404.mjs",
+    "deploy": "npm run build:hosting && npx firebase deploy --only hosting"
   },
   "private": true,
   "packageManager": "npm@11.12.1",
@@ -34,6 +36,7 @@
     "@angular/compiler-cli": "^22.1.0",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
+    "firebase-tools": "^15.28.2",
     "prettier": "^3.8.1",
     "typescript": "~6.0.2"
   }

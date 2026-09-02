@@ -57,7 +57,13 @@
             "server": "src/main.server.ts",
             "outputMode": "server",
             "security": {
-              "allowedHosts": []
+              "allowedHosts": [
+                "waynegakuo.web.app",
+                "waynegakuo.firebaseapp.com",
+                "waynegakuo.com",
+                "www.waynegakuo.com",
+                "localhost"
+              ]
             },
             "ssr": {
               "entry": "src/server.ts"

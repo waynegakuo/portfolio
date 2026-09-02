@@ -13,7 +13,7 @@ import {
 export const SITE = {
   name: 'Wayne Gakuo',
   shortName: 'WG',
-  url: 'https://waynegakuo.netlify.app',
+  url: 'https://waynegakuo.web.app',
   email: 'waynejotham@gmail.com',
   role: 'Technical Solutions Architect',
   kicker: 'Frontend Engineer · Google Developer Expert for Angular · Design Systems · AI · Cloud',

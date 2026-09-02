@@ -27,6 +27,11 @@ export const routes: Routes = [
     title: 'Education · Wayne Gakuo',
   },
   {
+    path: '404',
+    loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFoundPage),
+    title: 'Page not found · Wayne Gakuo',
+  },
+  {
     path: '**',
     loadComponent: () => import('./pages/not-found/not-found').then((m) => m.NotFoundPage),
     title: 'Page not found · Wayne Gakuo',

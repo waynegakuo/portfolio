@@ -6,5 +6,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'experience', renderMode: RenderMode.Prerender },
   { path: 'communities', renderMode: RenderMode.Prerender },
   { path: 'education', renderMode: RenderMode.Prerender },
+  { path: '404', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];
