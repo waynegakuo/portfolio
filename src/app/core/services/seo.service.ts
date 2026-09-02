@@ -19,7 +19,8 @@ export class SeoService {
     this.meta.updateTag({ name: 'author', content: SITE.name });
     this.meta.updateTag({
       name: 'theme-color',
-      content: this.document.documentElement.dataset['theme'] === 'dark' ? '#121110' : '#f3efe6',
+      content:
+        this.document.documentElement?.dataset?.['theme'] === 'dark' ? '#121110' : '#f3efe6',
     });
 
     this.meta.updateTag({ property: 'og:type', content: 'website' });

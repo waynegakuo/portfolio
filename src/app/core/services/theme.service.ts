@@ -64,7 +64,12 @@ export class ThemeService {
 
   private apply(theme: ThemeMode, persist = true): void {
     this.theme.set(theme);
-    this.document.documentElement.dataset['theme'] = theme;
+    const root = this.document.documentElement;
+    if (root?.dataset) {
+      root.dataset['theme'] = theme;
+    } else {
+      root?.setAttribute('data-theme', theme);
+    }
     this.document.querySelector('meta[name="theme-color"]')?.setAttribute(
       'content',
       theme === 'dark' ? '#121110' : '#f3efe6',
