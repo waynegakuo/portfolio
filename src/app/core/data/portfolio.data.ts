@@ -16,13 +16,13 @@ export const SITE = {
   url: 'https://waynegakuo.netlify.app',
   email: 'waynejotham@gmail.com',
   role: 'Technical Solutions Architect',
-  kicker: 'Technical Solutions Architect · Google Developer Expert for Angular · Design Systems · AI · Cloud',
+  kicker: 'Frontend Engineer · Google Developer Expert for Angular · Design Systems · AI · Cloud',
   headline: 'I design and ship scalable enterprise web apps and AI-powered platforms.',
   about: `I am a Google Developer Expert (GDE) in Angular and Technical Solutions Consultant with 7+ years of experience architecting high-performance enterprise web applications, robust design systems, and modern AI-powered platforms.`,
   aboutExtra: `My focus centers on turning complex design constraints and emerging technology into seamless, production-grade web solutions. Beyond architecting scalable frontend systems, I actively build and ship AI-enabled web applications—orchestrating multimodal LLM workflows, automated data extraction, and intelligent user experiences on the web.`,
   resumeHref: '/assets/resume/Wayne_Gakuo_Resume.pdf',
-  portrait: '/assets/img/profile_portrait.png',
-  ogImage: '/assets/img/profile_portrait.png',
+  portrait: '/assets/img/profile_portrait.jpg',
+  ogImage: '/assets/img/profile_portrait.jpg',
 } as const;
 
 export const NAV_LINKS: NavLink[] = [
@@ -74,8 +74,8 @@ export const PRACTICES: Practice[] = [
   },
   {
     kicker: 'AI on the web',
-    title: 'Shipped, not demoed',
-    copy: 'LLM workflows and intelligent UX wired into real Angular apps — inventory, coaching, and ops.',
+    title: 'Intelligent experiences',
+    copy: 'Recommendations, assistants, and LLM workflows that live in the product — inventory, coaching, and ops.',
   },
 ];
 
@@ -400,9 +400,9 @@ export const EDUCATION: Education[] = [
 
 export const PAGE_SEO = {
   home: {
-    title: 'Wayne Gakuo · Frontend Engineer · GDE Angular',
+    title: 'Wayne Gakuo · Technical Solutions Architect · GDE Angular',
     description:
-      'Frontend Engineer and Google Developer Expert for Angular. Design systems, enterprise web apps, and AI-powered platforms.',
+      'Technical Solutions Architect and Google Developer Expert for Angular. Enterprise web apps, design systems, and AI-powered platforms.',
     path: '/',
   },
   work: {

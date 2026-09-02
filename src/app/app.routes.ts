@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () => import('./pages/home/home').then((m) => m.HomePage),
-    title: 'Wayne Gakuo · Frontend Engineer · GDE Angular',
+    title: 'Wayne Gakuo · Technical Solutions Architect · GDE Angular',
   },
   {
     path: 'work',
