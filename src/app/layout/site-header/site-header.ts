@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NAV_LINKS, SITE } from '../../core/data/portfolio.data';
+import { NAV_LINKS } from '../../core/data/portfolio.data';
 import { ThemeService } from '../../core/services/theme.service';
 
 @Component({
@@ -11,7 +11,6 @@ import { ThemeService } from '../../core/services/theme.service';
 })
 export class SiteHeader {
   readonly theme = inject(ThemeService);
-  readonly site = SITE;
   readonly links = NAV_LINKS;
   readonly menuOpen = signal(false);
 

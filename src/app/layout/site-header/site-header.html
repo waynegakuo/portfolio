@@ -2,9 +2,23 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="site-header__bar">
-    <a routerLink="/" class="logo" (click)="close()">
-      <span class="logo__mark">{{ site.shortName }}</span>
-      <span class="logo__name">{{ site.name }}</span>
+    <a routerLink="/" class="logo" aria-label="Wayne Gakuo, home" (click)="close()">
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" focusable="false">
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3.3"
+            stroke-linejoin="miter"
+            stroke-linecap="butt"
+            d="M5.2 8.2 11.2 24.2 16 11.4 20.8 24.2 26.8 8.2"
+          />
+        </svg>
+      </span>
+      <span class="logo__wordmark">
+        <span class="logo__given">Wayne</span>
+        <span class="logo__family">Gakuo</span>
+      </span>
     </a>
 
     <nav id="mobile-nav" class="site-nav" [class.is-open]="menuOpen()" aria-label="Primary">

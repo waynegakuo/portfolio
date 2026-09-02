@@ -116,21 +116,25 @@ p {
   align-items: center;
   gap: 0.7rem;
   text-decoration: none;
-  font-weight: 700;
 }
 
 .logo__mark {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.55rem;
+  height: 2.55rem;
   display: grid;
   place-items: center;
+  padding: 0.28rem 0.22rem 0.18rem;
   background: var(--yellow);
   border: var(--border);
   box-shadow: var(--shadow-sm);
-  font-family: var(--font-display);
-  font-size: 0.95rem;
   color: #171717;
   transition: transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease);
+}
+
+.logo__mark svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .logo:hover .logo__mark {
@@ -138,10 +142,25 @@ p {
   box-shadow: 4px 4px 0 var(--line);
 }
 
-.logo__name {
+.logo__wordmark {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.08rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 0.92;
+}
+
+.logo__given {
+  font-size: 1.08rem;
+}
+
+.logo__family {
   font-size: 0.78rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  color: var(--muted);
+  letter-spacing: -0.03em;
 }
 
 .site-nav {
@@ -774,7 +793,16 @@ html[data-theme='dark'] .tag {
     display: grid;
   }
 
+  .site-header__bar {
+    justify-content: space-between;
+  }
+
+  .site-header__actions {
+    margin-left: auto;
+  }
+
   .site-nav {
+    margin-left: 0;
     position: absolute;
     inset: 4.3rem 1.25rem auto;
     background: var(--surface);
@@ -821,7 +849,7 @@ html[data-theme='dark'] .tag {
     margin-left: 0;
   }
 
-  .logo__name {
+  .logo__wordmark {
     display: none;
   }
 }
