@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8" />
     <title>Wayne Gakuo · Technical Solutions Architect · GDE Angular</title>
@@ -9,7 +9,7 @@
       name="description"
       content="Technical Solutions Architect and Google Developer Expert for Angular. Enterprise web apps, design systems, and AI-powered platforms."
     />
-    <meta name="theme-color" content="#111111" />
+    <meta name="theme-color" content="#f3efe6" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
@@ -25,13 +25,8 @@
       (function () {
         try {
           var stored = localStorage.getItem('wg-theme');
-          var theme =
-            stored === 'dark' || stored === 'light'
-              ? stored
-              : window.matchMedia('(prefers-color-scheme: dark)').matches
-                ? 'dark'
-                : 'light';
-          document.documentElement.dataset.theme = theme;
+          document.documentElement.dataset.theme =
+            stored === 'dark' || stored === 'light' ? stored : 'light';
         } catch (e) {
           document.documentElement.dataset.theme = 'light';
         }

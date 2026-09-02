@@ -17,7 +17,10 @@ export class SeoService {
     this.title.setTitle(page.title);
     this.meta.updateTag({ name: 'description', content: page.description });
     this.meta.updateTag({ name: 'author', content: SITE.name });
-    this.meta.updateTag({ name: 'theme-color', content: '#171717' });
+    this.meta.updateTag({
+      name: 'theme-color',
+      content: this.document.documentElement.dataset['theme'] === 'dark' ? '#121110' : '#f3efe6',
+    });
 
     this.meta.updateTag({ property: 'og:type', content: 'website' });
     this.meta.updateTag({ property: 'og:title', content: page.title });

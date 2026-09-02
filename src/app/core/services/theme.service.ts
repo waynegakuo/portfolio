@@ -1,5 +1,5 @@
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
-import { Injectable, PLATFORM_ID, inject, signal } from '@angular/core';
+import { Injectable, PLATFORM_ID, afterNextRender, inject, signal } from '@angular/core';
 import { ThemeMode } from '../models/portfolio.model';
 
 const STORAGE_KEY = 'wg-theme';
@@ -17,11 +17,12 @@ export class ThemeService {
   readonly theme = signal<ThemeMode>('light');
 
   constructor() {
-    if (isPlatformBrowser(this.platformId)) {
-      const stored = this.document.documentElement.dataset['theme'] as ThemeMode | undefined;
-      const valid = stored === 'dark' || stored === 'light' ? stored : this.preferred();
-      this.apply(valid, false);
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
     }
+
+    this.restore();
+    afterNextRender(() => this.restore());
   }
 
   toggle(): void {
@@ -48,17 +49,34 @@ export class ThemeService {
     this.apply(next);
   }
 
-  private preferred(): ThemeMode {
-    return this.document.defaultView?.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'dark'
-      : 'light';
+  private restore(): void {
+    this.apply(this.readStored() ?? 'light', false);
+  }
+
+  private readStored(): ThemeMode | null {
+    try {
+      const value = this.document.defaultView?.localStorage.getItem(STORAGE_KEY);
+      return value === 'dark' || value === 'light' ? value : null;
+    } catch {
+      return null;
+    }
   }
 
   private apply(theme: ThemeMode, persist = true): void {
     this.theme.set(theme);
     this.document.documentElement.dataset['theme'] = theme;
-    if (persist && isPlatformBrowser(this.platformId)) {
+    this.document.querySelector('meta[name="theme-color"]')?.setAttribute(
+      'content',
+      theme === 'dark' ? '#121110' : '#f3efe6',
+    );
+    if (!persist || !isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
+    try {
       this.document.defaultView?.localStorage.setItem(STORAGE_KEY, theme);
+    } catch {
+      // Private mode can block storage; the in-session theme still applies.
     }
   }
 }
