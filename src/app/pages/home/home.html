@@ -72,9 +72,43 @@
   </div>
 </section>
 
-<section class="band" id="about">
+<section class="band" id="writing">
   <header class="section-head">
     <span class="index">02</span>
+    <div>
+      <p class="kicker">On Dev.to</p>
+      <h2>Writing</h2>
+    </div>
+    <a routerLink="/writing" class="btn btn--ghost section-head__action">All articles</a>
+  </header>
+
+  <div class="project-grid">
+    @for (article of featuredWriting(); track article.id) {
+      <article class="project-card">
+        <a [href]="article.url" target="_blank" rel="noopener" class="project-card__media">
+          <img [src]="article.image" [alt]="article.title" />
+        </a>
+        <div class="project-card__body">
+          <div class="tag-row">
+            @for (tag of article.tags; track tag) {
+              <span class="tag">{{ tag }}</span>
+            }
+          </div>
+          <h3>{{ article.title }}</h3>
+          <p class="exp-card__period">
+            {{ article.publishedAt | date: 'MMM d, y' }} · {{ article.readingTime }} min read
+          </p>
+          <p>{{ article.description }}</p>
+          <a [href]="article.url" class="text-link" target="_blank" rel="noopener">Read on Dev.to</a>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="band" id="about">
+  <header class="section-head">
+    <span class="index">03</span>
     <div>
       <p class="kicker">Profile</p>
       <h2>About</h2>
@@ -101,7 +135,7 @@
 
 <section class="band" id="experience">
   <header class="section-head">
-    <span class="index">03</span>
+    <span class="index">04</span>
     <div>
       <p class="kicker">Career</p>
       <h2>Latest roles</h2>
@@ -131,7 +165,7 @@
 
 <section class="band" id="stack">
   <header class="section-head">
-    <span class="index">04</span>
+    <span class="index">05</span>
     <div>
       <p class="kicker">How I build</p>
       <h2>Stack</h2>
@@ -150,7 +184,7 @@
 
 <section class="band" id="media">
   <header class="section-head">
-    <span class="index">05</span>
+    <span class="index">06</span>
     <div>
       <p class="kicker">Talks & features</p>
       <h2>Media</h2>
@@ -187,7 +221,7 @@
 
 <section class="band" id="communities">
   <header class="section-head">
-    <span class="index">06</span>
+    <span class="index">07</span>
     <div>
       <p class="kicker">Leadership</p>
       <h2>Communities</h2>
@@ -211,7 +245,7 @@
 
 <section class="band" id="education">
   <header class="section-head">
-    <span class="index">07</span>
+    <span class="index">08</span>
     <div>
       <p class="kicker">Foundation</p>
       <h2>Education</h2>

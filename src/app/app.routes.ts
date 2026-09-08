@@ -12,6 +12,11 @@ export const routes: Routes = [
     title: 'Work · Wayne Gakuo',
   },
   {
+    path: 'writing',
+    loadComponent: () => import('./pages/writing/writing').then((m) => m.WritingPage),
+    title: 'Writing · Wayne Gakuo',
+  },
+  {
     path: 'experience',
     loadComponent: () => import('./pages/experience/experience').then((m) => m.ExperiencePage),
     title: 'Experience · Wayne Gakuo',

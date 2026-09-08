@@ -1,4 +1,5 @@
 import {
+  Article,
   Community,
   Education,
   Experience,
@@ -28,10 +29,17 @@ export const SITE = {
 export const NAV_LINKS: NavLink[] = [
   { label: 'Home', path: '/' },
   { label: 'Work', path: '/work' },
+  { label: 'Writing', path: '/writing' },
   { label: 'Experience', path: '/experience' },
   { label: 'Communities', path: '/communities' },
   { label: 'Education', path: '/education' },
 ];
+
+export const DEV_TO = {
+  username: 'wayne_gakuo',
+  profileUrl: 'https://dev.to/wayne_gakuo',
+  articlesApi: 'https://dev.to/api/articles?username=wayne_gakuo&per_page=30',
+} as const;
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
@@ -48,6 +56,11 @@ export const SOCIAL_LINKS: SocialLink[] = [
     label: 'GitHub',
     href: 'https://github.com/waynegakuo',
     icon: 'github',
+  },
+  {
+    label: 'Dev.to',
+    href: DEV_TO.profileUrl,
+    icon: 'devto',
   },
   {
     label: 'Résumé',
@@ -381,6 +394,120 @@ export const COMMUNITIES: Community[] = [
   },
 ];
 
+export const ARTICLE_FILTERS = ['All', 'Angular', 'AI', 'JavaScript', 'Firebase'] as const;
+
+export const ARTICLES: Article[] = [
+  {
+    id: 3493783,
+    title: 'Component Communication in Angular: Input(), Output()',
+    description:
+      'Angular components communicate using specific patterns based on their relationship (parent-to-child,...',
+    url: 'https://dev.to/wayne_gakuo/component-communication-in-angular-input-output-1i1b',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ff3gibt9xot95slm5hhrj.png',
+    publishedAt: '2026-06-09T08:00:19Z',
+    readingTime: 3,
+    tags: ['angular', 'webdev', 'typescript', 'tutorial'],
+  },
+  {
+    id: 3441777,
+    title: 'Multi-Agent AI Systems: Grounding with Google Maps in Genkit',
+    description:
+      'In my previous article, we explored how to build a multi-agent AI concierge using Angular and...',
+    url: 'https://dev.to/wayne_gakuo/multi-agent-ai-systems-grounding-with-google-maps-in-genkit-4ijb',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Feofw17jlm3y7fwufs47l.png',
+    publishedAt: '2026-04-08T10:33:52Z',
+    readingTime: 11,
+    tags: ['genkit', 'angular', 'firebase', 'ai'],
+  },
+  {
+    id: 3332097,
+    title: "Mastering Retrieval-Augmented Generation with Gemini API's File Search Tool",
+    description:
+      'I first heard about Retrieval-Augmented Generation (RAG) when I was trying to get an AI agent to...',
+    url: 'https://dev.to/wayne_gakuo/mastering-retrieval-augmented-generation-with-gemini-apis-file-search-tool-4lok',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F1qbzweu30320y3dwzsdl.png',
+    publishedAt: '2026-03-10T09:34:02Z',
+    readingTime: 5,
+    tags: ['ai', 'angular', 'rag', 'gemini'],
+  },
+  {
+    id: 3283790,
+    title: 'Building a Multi-Agent System with Tool Calling using Angular, Firebase & Genkit',
+    description:
+      'A deep-dive into building a production-ready, multi-agent AI chat application using Angular 20,...',
+    url: 'https://dev.to/wayne_gakuo/building-a-multi-agent-system-with-tool-calling-using-angular-firebase-genkit-5h83',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fjj1fgxomq44y8i9liakm.png',
+    publishedAt: '2026-02-25T11:34:13Z',
+    readingTime: 7,
+    tags: ['agents', 'ai', 'angular', 'gemini'],
+  },
+  {
+    id: 3204258,
+    title: 'Handling the "Flash of Unauthenticated Content" in Angular SSR',
+    description:
+      'I ran into a peculiar bug lately. Users were briefly seeing a "Sign Up/Sign In" button appear in the...',
+    url: 'https://dev.to/wayne_gakuo/handling-the-flash-of-authenticated-content-in-angular-ssr-41h',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F77c5jju2grinj4y6ty3z.png',
+    publishedAt: '2026-01-28T11:18:35Z',
+    readingTime: 3,
+    tags: ['angular', 'firebase', 'javascript', 'gemini'],
+  },
+  {
+    id: 2689763,
+    title:
+      'Building AI-powered e-commerce applications using Angular & Firebase AI Logic (formerly Vertex AI in Firebase)',
+    description:
+      'The landscape of online shopping has undergone a dramatic transformation. From the early days of...',
+    url: 'https://dev.to/wayne_gakuo/building-ai-powered-e-commerce-applications-using-angular-firebase-ai-logic-formerly-vertex-ai-4mdi',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fzwkjf3ob2mcpjyswx8be.jpg',
+    publishedAt: '2025-07-15T09:34:17Z',
+    readingTime: 8,
+    tags: ['buildwithai', 'firebase', 'angular', 'gemini'],
+  },
+  {
+    id: 359711,
+    title: 'Introduction to Progressive Web Applications (PWAs)',
+    description:
+      'I was honored to deliver a talk on Progressive Web Application courtesy of Microsoft Student Partners...',
+    url: 'https://dev.to/wayne_gakuo/introduction-to-progressive-web-applications-pwas-3jpj',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fi%2F34srnk1qrzrjqwcgvjf4.jpeg',
+    publishedAt: '2020-06-20T14:35:35Z',
+    readingTime: 1,
+    tags: ['javascript', 'html', 'css', 'progressivewebapps'],
+  },
+  {
+    id: 317054,
+    title: 'Optional Chaining & Nullish Coalescing',
+    description:
+      "Take a look at the code below. Does it look familiar? const resident = { name: 'John',...",
+    url: 'https://dev.to/wayne_gakuo/optional-chaining-nullish-coalescing-4g4l',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=500,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fr326pv6st7klbore6584.png',
+    publishedAt: '2020-05-03T16:55:45Z',
+    readingTime: 2,
+    tags: ['javascript', 'beginners', 'es2020', 'es6'],
+  },
+  {
+    id: 240032,
+    title: 'Picky Picky with forEach()',
+    description:
+      'This article is meant to introduce you to some of the powerful capabilities of the "mighty for loop"...',
+    url: 'https://dev.to/wayne_gakuo/picky-picky-with-foreach-3neg',
+    image:
+      'https://media2.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fthepracticaldev.s3.amazonaws.com%2Fi%2F4t5doi73agq6ptvzbnjp.jpg',
+    publishedAt: '2020-01-23T13:03:54Z',
+    readingTime: 1,
+    tags: ['javascript', 'es6', 'vannillajs', 'beginners'],
+  },
+];
+
 export const EDUCATION: Education[] = [
   {
     course: 'BSc. Computer Science',
@@ -410,6 +537,12 @@ export const PAGE_SEO = {
     description:
       'Selected products and platforms Wayne Gakuo has designed, built, and shipped — from AI-powered Angular apps to African commerce.',
     path: '/work',
+  },
+  writing: {
+    title: 'Writing · Wayne Gakuo',
+    description:
+      'Technical writing by Wayne Gakuo on Angular, AI, Firebase, and JavaScript — published on Dev.to.',
+    path: '/writing',
   },
   experience: {
     title: 'Experience · Wayne Gakuo',

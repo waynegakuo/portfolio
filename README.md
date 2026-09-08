@@ -14,7 +14,7 @@ MIT licensed. Fork it, restyle it, ship it.
 
 ## What’s included
 
-- Home, work, experience, communities, education, and a 404
+- Home, work, writing, experience, communities, education, and a 404
 - Typed content in one file (projects, roles, talks, stack, SEO)
 - Light and dark theme
 - Angular 22 with SSR and prerendered routes, so pages stay indexable
@@ -39,7 +39,7 @@ Dev server: [http://localhost:4200](http://localhost:4200)
 
 Almost everything people see lives in data and assets. You should not need to rewrite the app.
 
-1. **Copy and identity** — edit `src/app/core/data/portfolio.data.ts`. `SITE`, socials, projects, experience, communities, education, talks, stack, and page titles all start there.
+1. **Copy and identity** — edit `src/app/core/data/portfolio.data.ts`. `SITE`, socials, projects, writing, experience, communities, education, talks, stack, and page titles all start there. Technical writing is loaded from Dev.to (`DEV_TO`) with a static fallback in `ARTICLES`.
 2. **Images and résumé** — replace files under `public/assets/` (portrait, project shots, logos, `resume/`). Keep the paths in `SITE` and the project entries in sync.
 3. **Favicon** — swap `public/favicon-16.png`, `public/favicon-32.png`, `public/favicon-192.png`, `public/apple-touch-icon.png`, and `public/favicon.ico`.
 4. **Header mark** — the W lockup is inline SVG in `src/app/layout/site-header/site-header.html`.

@@ -8,7 +8,7 @@ export interface NavLink {
 export interface SocialLink {
   label: string;
   href: string;
-  icon: 'linkedin' | 'x' | 'github' | 'email' | 'resume';
+  icon: 'linkedin' | 'x' | 'github' | 'devto' | 'email' | 'resume';
 }
 
 export interface Practice {
@@ -61,6 +61,17 @@ export interface Education {
   school: string;
   period: string;
   description: string;
+}
+
+export interface Article {
+  id: number;
+  title: string;
+  description: string;
+  url: string;
+  image: string;
+  publishedAt: string;
+  readingTime: number;
+  tags: string[];
 }
 
 export interface SeoConfig {

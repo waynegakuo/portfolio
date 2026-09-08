@@ -169,7 +169,7 @@ p {
 
 .site-nav ul {
   display: flex;
-  gap: 1.15rem;
+  gap: 1rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -788,7 +788,7 @@ html[data-theme='dark'] .tag {
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .burger {
     display: grid;
   }
@@ -831,7 +831,9 @@ html[data-theme='dark'] .tag {
     flex-direction: column;
     gap: 0.85rem;
   }
+}
 
+@media (max-width: 760px) {
   .hero,
   .about,
   .practice,

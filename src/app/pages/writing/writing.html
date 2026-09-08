@@ -1,0 +1,50 @@
+<section class="page-hero">
+  <p class="kicker">On Dev.to</p>
+  <h1>Writing</h1>
+  <p class="page-hero__lead">
+    Technical writing on Angular, AI on the web, and the details that show up once you ship —
+    published on Dev.to.
+  </p>
+  <div class="hero__cta">
+    <a class="btn btn--ghost" [href]="profileUrl" target="_blank" rel="noopener">Dev.to profile</a>
+  </div>
+</section>
+
+<div class="filter-row" role="tablist" aria-label="Filter articles">
+  @for (item of filters; track item) {
+    <button
+      type="button"
+      class="btn btn--sm"
+      [class.btn--primary]="filter() === item"
+      [class.btn--ghost]="filter() !== item"
+      (click)="filter.set(item)"
+    >
+      {{ item }}
+    </button>
+  }
+</div>
+
+<div class="project-grid">
+  @for (article of articles(); track article.id) {
+    <article class="project-card">
+      <a [href]="article.url" target="_blank" rel="noopener" class="project-card__media">
+        <img [src]="article.image" [alt]="article.title" />
+      </a>
+      <div class="project-card__body">
+        <div class="tag-row">
+          @for (tag of article.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+        <h3>{{ article.title }}</h3>
+        <p class="exp-card__period">
+          {{ article.publishedAt | date: 'MMM d, y' }} · {{ article.readingTime }} min read
+        </p>
+        <p>{{ article.description }}</p>
+        <a [href]="article.url" class="text-link" target="_blank" rel="noopener">Read on Dev.to</a>
+      </div>
+    </article>
+  } @empty {
+    <p class="empty">Nothing in this lane — yet.</p>
+  }
+</div>
