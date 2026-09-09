@@ -6,11 +6,11 @@ MIT licensed. Fork it, restyle it, ship it.
 
 ### Light mode
 
-![Portfolio screenshot — light mode](./docs/screenshots/portfolio-light.png)
+![Portfolio screenshot — light mode](/docs/screenshots/portfolio-light.png)
 
 ### Dark mode
 
-![Portfolio screenshot — dark mode](./docs/screenshots/portfolio-dark.png)
+![Portfolio screenshot — dark mode](/docs/screenshots/portfolio-dark.png)
 
 ## What’s included
 
