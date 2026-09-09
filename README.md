@@ -1,6 +1,6 @@
 # Portfolio
 
-An open-source personal site you can fork and make your own. The live example is [Wayne Gakuo](https://waynegakuo.web.app) — Technical Solutions Architect and Google Developer Expert for Angular — but the content, assets, and branding are all data-driven so you can swap in your own work, roles, and voice.
+An open-source personal site you can fork and make your own. The live example is [Wayne Gakuo](https://waynegakuo.com) — Technical Solutions Architect and Google Developer Expert for Angular — but the content, assets, and branding are all data-driven so you can swap in your own work, roles, and voice.
 
 MIT licensed. Fork it, restyle it, ship it.
 
@@ -71,7 +71,7 @@ npm run deploy                 # Prerender and deploy to the Firebase project in
 
 **Anywhere else:** publish `dist/portfolio-ssr/browser` as static files. Keep `cleanUrls` (or equivalent) so `/work` serves `work/index.html`. Do not rewrite every path to the home `index.html` or you lose per-page SEO.
 
-This repo’s `netlify.toml` 301s `waynegakuo.netlify.app` to the Firebase site. If you fork and deploy to Netlify, remove that file or change the redirect target.
+This repo’s `netlify.toml` 301s `waynegakuo.netlify.app` to `waynegakuo.com`. If you fork and deploy to Netlify, remove that file or change the redirect target.
 
 ## License
 

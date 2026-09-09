@@ -8,6 +8,6 @@
 
 [[redirects]]
   from = "/*"
-  to = "https://waynegakuo.web.app/:splat"
+  to = "https://waynegakuo.com/:splat"
   status = 301
   force = true

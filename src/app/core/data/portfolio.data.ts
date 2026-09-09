@@ -14,7 +14,7 @@ import {
 export const SITE = {
   name: 'Wayne Gakuo',
   shortName: 'WG',
-  url: 'https://waynegakuo.web.app',
+  url: 'https://waynegakuo.com',
   email: 'waynejotham@gmail.com',
   role: 'Technical Solutions Architect',
   kicker: 'Frontend Engineer · Google Developer Expert for Angular · Design Systems · AI · Cloud',
