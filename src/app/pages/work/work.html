@@ -25,7 +25,14 @@
   @for (project of projects(); track project.href) {
     <article class="project-card">
       <a [href]="project.href" target="_blank" rel="noopener" class="project-card__media">
-        <img [src]="project.image" [alt]="project.title" />
+        <img
+          [ngSrc]="webpSrc(project.image)"
+          [ngSrcset]="responsiveWidths"
+          [sizes]="cardImageSizes"
+          [width]="cardImage.width"
+          [height]="cardImage.height"
+          [alt]="project.title"
+        />
       </a>
       <div class="project-card__body">
         <div class="tag-row">

@@ -19,8 +19,10 @@
   <figure class="hero__portrait">
     <img
       [ngSrc]="site.portrait"
-      width="1134"
-      height="1145"
+      [ngSrcset]="responsiveWidths"
+      [sizes]="portraitSizes"
+      [width]="portraitImage.width"
+      [height]="portraitImage.height"
       priority
       alt="Portrait of Wayne Gakuo, Google Developer Expert for Angular"
     />
@@ -53,7 +55,14 @@
     @for (project of featured; track project.href) {
       <article class="project-card">
         <a [href]="project.href" target="_blank" rel="noopener" class="project-card__media">
-          <img [src]="project.image" [alt]="project.title" />
+          <img
+            [ngSrc]="webpSrc(project.image)"
+            [ngSrcset]="responsiveWidths"
+            [sizes]="cardImageSizes"
+            [width]="cardImage.width"
+            [height]="cardImage.height"
+            [alt]="project.title"
+          />
         </a>
         <div class="project-card__body">
           <div class="tag-row">
@@ -86,7 +95,14 @@
     @for (article of featuredWriting(); track article.id) {
       <article class="project-card">
         <a [href]="article.url" target="_blank" rel="noopener" class="project-card__media">
-          <img [src]="article.image" [alt]="article.title" />
+          <img
+            [src]="article.image"
+            width="640"
+            height="270"
+            loading="lazy"
+            decoding="async"
+            [alt]="article.title"
+          />
         </a>
         <div class="project-card__body">
           <div class="tag-row">
@@ -175,7 +191,7 @@
   <ul class="stack-grid">
     @for (item of stack; track item.name) {
       <li class="stack-card">
-        <img [src]="item.image" [alt]="item.name" />
+        <img [src]="item.image" [alt]="item.name" loading="lazy" decoding="async" />
         <span>{{ item.name }}</span>
       </li>
     }
@@ -206,7 +222,14 @@
           </div>
         } @else {
           <button type="button" class="media-card__play" (click)="play(video.id)">
-            <img [src]="thumb(video.id)" [alt]="video.title" width="480" height="360" />
+            <img
+              [src]="thumb(video.id)"
+              width="480"
+              height="360"
+              loading="lazy"
+              decoding="async"
+              [alt]="video.title"
+            />
             <span class="play-mark">Play</span>
           </button>
         }
@@ -233,7 +256,7 @@
     @for (community of communities; track community.name) {
       <article class="community-card">
         <div class="community-card__logo">
-          <img [src]="community.logo" [alt]="community.logoAlt" />
+          <img [src]="community.logo" [alt]="community.logoAlt" loading="lazy" decoding="async" />
         </div>
         <p class="kicker">{{ community.role }}</p>
         <h3>{{ community.name }}</h3>

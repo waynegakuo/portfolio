@@ -15,12 +15,21 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="preload" as="image" type="image/webp" href="/assets/img/profile_portrait-800.webp" fetchpriority="high" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Outfit:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=Outfit:wght@400;500;600;700&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <script>
       (function () {
         try {
@@ -40,7 +49,7 @@
         "url": "https://waynegakuo.com",
         "email": "waynejotham@gmail.com",
         "jobTitle": "Technical Solutions Architect",
-        "image": "https://waynegakuo.com/assets/img/profile_portrait.jpg",
+        "image": "https://waynegakuo.com/assets/img/profile_portrait-800.webp",
         "sameAs": [
           "https://www.linkedin.com/in/waynegakuo/",
           "https://github.com/waynegakuo",

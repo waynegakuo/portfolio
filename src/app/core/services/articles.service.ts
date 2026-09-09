@@ -2,6 +2,7 @@ import { httpResource } from '@angular/common/http';
 import { Injectable, computed } from '@angular/core';
 import { ARTICLES, DEV_TO } from '../data/portfolio.data';
 import { Article } from '../models/portfolio.model';
+import { devToCardImage } from '../utils/image.util';
 
 interface DevToArticle {
   id: number;
@@ -26,7 +27,11 @@ export class ArticlesService {
 
   readonly articles = computed(() => {
     const mapped = mapArticles(this.remote.value());
-    return mapped.length > 0 ? mapped : ARTICLES;
+    const list = mapped.length > 0 ? mapped : ARTICLES;
+    return list.map((article) => ({
+      ...article,
+      image: devToCardImage(article.image),
+    }));
   });
 
   readonly featured = computed(() => this.articles().slice(0, 3));

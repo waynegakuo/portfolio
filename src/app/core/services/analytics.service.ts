@@ -32,11 +32,22 @@ export class AnalyticsService {
       return;
     }
 
-    this.install(win as unknown as AnalyticsWindow, measurementId);
     this.router.events
       .pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd))
       .subscribe((event) => this.pageview(event.urlAfterRedirects));
-    afterNextRender(() => this.pageview(this.router.url));
+
+    afterNextRender(() => {
+      const start = () => {
+        this.install(win as unknown as AnalyticsWindow, measurementId);
+        this.pageview(this.router.url);
+      };
+
+      if ('requestIdleCallback' in win) {
+        win.requestIdleCallback(start, { timeout: 4000 });
+      } else {
+        setTimeout(start, 2500);
+      }
+    });
   }
 
   private isLocal(hostname: string): boolean {

@@ -22,8 +22,8 @@ export const SITE = {
   about: `I am a Google Developer Expert (GDE) in Angular and Technical Solutions Consultant with 7+ years of experience architecting high-performance enterprise web applications, robust design systems, and modern AI-powered platforms.`,
   aboutExtra: `My focus centers on turning complex design constraints and emerging technology into seamless, production-grade web solutions. Beyond architecting scalable frontend systems, I actively build and ship AI-enabled web applications—orchestrating multimodal LLM workflows, automated data extraction, and intelligent user experiences on the web.`,
   resumeHref: '/assets/resume/Wayne_Gakuo_Resume.pdf',
-  portrait: '/assets/img/profile_portrait.jpg',
-  ogImage: '/assets/img/profile_portrait.jpg',
+  portrait: '/assets/img/profile_portrait-800.webp',
+  ogImage: '/assets/img/profile_portrait-800.webp',
 } as const;
 
 export const NAV_LINKS: NavLink[] = [

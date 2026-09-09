@@ -1,9 +1,11 @@
+import { IMAGE_LOADER } from '@angular/common';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { responsiveWebpLoader } from './core/utils/image.util';
 import {
   ApplicationConfig,
   provideBrowserGlobalErrorListeners,
 } from '@angular/core';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideClientHydration } from '@angular/platform-browser';
 import {
   provideRouter,
   withInMemoryScrolling,
@@ -32,6 +34,7 @@ export const appConfig: ApplicationConfig = {
         },
       }),
     ),
-    provideClientHydration(withEventReplay()),
+    provideClientHydration(),
+    { provide: IMAGE_LOADER, useValue: responsiveWebpLoader },
   ],
 };

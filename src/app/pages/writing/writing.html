@@ -28,7 +28,14 @@
   @for (article of articles(); track article.id) {
     <article class="project-card">
       <a [href]="article.url" target="_blank" rel="noopener" class="project-card__media">
-        <img [src]="article.image" [alt]="article.title" />
+        <img
+          [src]="article.image"
+          width="640"
+          height="270"
+          loading="lazy"
+          decoding="async"
+          [alt]="article.title"
+        />
       </a>
       <div class="project-card__body">
         <div class="tag-row">
