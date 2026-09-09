@@ -4,6 +4,20 @@
     "cleanUrls": true,
     "trailingSlash": false,
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "redirects": [
+      {
+        "source": "/**",
+        "destination": "https://waynegakuo.com/:splat",
+        "type": 301,
+        "condition": {
+          "host": [
+            "waynegakuo.web.app",
+            "waynegakuo.firebaseapp.com",
+            "www.waynegakuo.com"
+          ]
+        }
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(html)",

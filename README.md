@@ -66,12 +66,13 @@ npm run deploy                 # Prerender and deploy to the Firebase project in
 
 1. Install the Firebase CLI (already a dev dependency) and log in: `npx firebase login`
 2. Create your own project, then set it in `.firebaserc`
-3. Change `SITE.url` and the sitemap/robots/JSON-LD hosts to your `*.web.app` (or custom) domain
-4. Run `npm run deploy`
+3. Change `SITE.url` and the sitemap/robots/JSON-LD hosts to your custom domain
+4. Update `firebase.json` redirect hosts if your canonical domain differs from `waynegakuo.com`
+5. Run `npm run deploy`
 
 **Anywhere else:** publish `dist/portfolio-ssr/browser` as static files. Keep `cleanUrls` (or equivalent) so `/work` serves `work/index.html`. Do not rewrite every path to the home `index.html` or you lose per-page SEO.
 
-This repo’s `netlify.toml` 301s `waynegakuo.netlify.app` to `waynegakuo.com`. If you fork and deploy to Netlify, remove that file or change the redirect target.
+This repo’s `firebase.json` 301s `waynegakuo.web.app`, `waynegakuo.firebaseapp.com`, and `www.waynegakuo.com` to `waynegakuo.com`. `netlify.toml` does the same for `waynegakuo.netlify.app`. If you fork, update or remove those redirects for your domain.
 
 ## License
 
