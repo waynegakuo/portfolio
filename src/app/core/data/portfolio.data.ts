@@ -255,7 +255,7 @@ export const PROJECTS: Project[] = [
     title: 'Bytewise',
     description:
       "An AI-powered e-commerce app where customers talk to an agent to query inventory and take actions such as add to cart.",
-    href: 'https://bytewise-shop.web.app/',
+    href: 'https://bytewiseshop.web.app/',
     image: '/assets/img/projects/bytewise.png',
     tags: ['AI', 'Commerce'],
     featured: true,
