@@ -313,7 +313,7 @@ export const PROJECTS: Project[] = [
     description:
       'Official site for DevFest Kenya 2020: schedule, speakers, registration, recorded sessions, and live chat.',
     href: 'https://devfestkenya.netlify.app/',
-    image: '/assets/img/devfest_kenya.png',
+    image: '/assets/img/projects/devfest_kenya.png',
     tags: ['Community', 'Angular'],
   },
   {
@@ -321,7 +321,7 @@ export const PROJECTS: Project[] = [
     description:
       'Education technology that connects global learners with professional tutors for on-demand learning — anything, anywhere, anytime.',
     href: 'https://gcspapp.netlify.app/',
-    image: '/assets/img/gcsp_web.png',
+    image: '/assets/img/projects/gcsp_web.png',
     tags: ['Education', 'Angular'],
   },
   {
@@ -329,7 +329,7 @@ export const PROJECTS: Project[] = [
     description:
       'Registration and authorized access to expert videos and content for a virtual retreat focused on abundance in wealth and wellbeing.',
     href: 'https://virtualretreat.netlify.app/',
-    image: '/assets/img/vretreat.png',
+    image: '/assets/img/projects/vretreat.png',
     tags: ['Content', 'Angular'],
   },
 ];
