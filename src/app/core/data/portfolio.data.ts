@@ -254,10 +254,19 @@ export const PROJECTS: Project[] = [
   {
     title: 'Bytewise',
     description:
-      "An AI-powered e-commerce app where customers talk to an agent to query inventory and take actions such as add to cart.",
+      'An AI-powered e-commerce app where customers talk to an agent to query inventory and take actions such as add to cart.',
     href: 'https://bytewiseshop.web.app/',
     image: '/assets/img/projects/bytewise.png',
     tags: ['AI', 'Commerce'],
+    featured: true,
+  },
+  {
+    title: 'Open Weather',
+    description:
+      'Real-time weather forecast, hourly outlook, and live wind & atmospheric conditions — powered by Open-Meteo.',
+    href: 'https://open-forecast.web.app/',
+    image: '/assets/img/projects/openweather.png',
+    tags: ['Tools', 'Angular'],
     featured: true,
   },
   {
@@ -315,14 +324,6 @@ export const PROJECTS: Project[] = [
     href: 'https://devfestkenya.netlify.app/',
     image: '/assets/img/projects/devfest_kenya.png',
     tags: ['Community', 'Angular'],
-  },
-  {
-    title: 'GCSP Website',
-    description:
-      'Education technology that connects global learners with professional tutors for on-demand learning — anything, anywhere, anytime.',
-    href: 'https://gcspapp.netlify.app/',
-    image: '/assets/img/projects/gcsp_web.png',
-    tags: ['Education', 'Angular'],
   },
   {
     title: 'Virtual Retreat',
